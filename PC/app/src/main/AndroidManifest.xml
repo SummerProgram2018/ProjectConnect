@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DetailedView"></activity>
+        <activity android:name=".DetailedView" />
+        <activity android:name=".SuccessApply"></activity>
     </application>
 
 </manifest>

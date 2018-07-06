@@ -5,4 +5,5 @@
     <string name="make">Make</string>
     <string name="apply">Apply to this Project!</string>
     <string name="projectname">Some Random Name</string>
+    <string name="backpage">Back to View Projects</string>
 </resources>

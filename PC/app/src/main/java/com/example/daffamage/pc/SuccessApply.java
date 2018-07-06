@@ -1,14 +1,13 @@
 package com.example.daffamage.pc;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class DetailedView extends AppCompatActivity {
+public class SuccessApply extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed_view);
+        setContentView(R.layout.activity_success_apply);
     }
 }
