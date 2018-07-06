@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProjectConnect</string>
+    <string name="view_project">View Project</string>
+    <string name="view">View</string>
+    <string name="make">Make</string>
+    <string name="apply">Apply to this Project!</string>
+    <string name="projectname">Some Random Name</string>
+</resources>
