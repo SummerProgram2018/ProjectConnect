@@ -28,35 +28,35 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/Project1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PROJECT 1
-SKILL :
-PEOPLE :"
-                android:textSize="25sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/Project2"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="PROJECT 2
-SKILL :
-PEOPLE :"
-                android:textSize="25sp" />
+                android:layout_height="wrap_content">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/Project1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PROJECT 1\nSKILL :\nPEOPLE :"
+                    android:onClick="openProject"
+                    android:textSize="25sp" />
+
+
+                <TextView
+                    android:id="@+id/Project2"
+                    android:layout_below="@+id/Project1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PROJECT 2\nSKILL :\nPEOPLE :"
+                    android:onClick="openProject"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+        </ScrollView>
 
 
     </LinearLayout>
@@ -72,6 +72,7 @@ PEOPLE :"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="refreshView"
             android:text="@string/view" />
 
         <Button

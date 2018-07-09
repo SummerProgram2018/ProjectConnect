@@ -7,6 +7,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class DetailedView extends AppCompatActivity {
+
+    //Make Project block here
+
+    public void refreshView (View view)
+    {
+        Intent intent = new Intent(this, ViewActivity.class);
+        startActivity(intent);
+    }
+
     public void goApply (View view)
     {
         Intent intent = new Intent(this, SuccessApply.class);

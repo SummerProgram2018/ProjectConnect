@@ -36,8 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Brief Description :
-A sample project!"/>
+                android:text="Brief Description :\nA sample project!"/>
 
         </LinearLayout>
 
@@ -49,10 +48,7 @@ A sample project!"/>
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Skills :
-1.
-2.
-3."/>
+                android:text="Skills :"/>
         </LinearLayout>
 
         <LinearLayout
@@ -63,8 +59,7 @@ A sample project!"/>
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="Length of project :
-Yi Days"/>
+                android:text="Length of project :\n1 Day"/>
         </LinearLayout>
 
         <LinearLayout
@@ -75,7 +70,7 @@ Yi Days"/>
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:text="People : 7 People"/>
+                android:text="People :\n7 People"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -107,6 +102,7 @@ Yi Days"/>
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="refreshView"
             android:text="@string/view" />
 
         <Button
