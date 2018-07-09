@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class DetailedView extends AppCompatActivity {
-
-    //Make Project block here
+public class SuccessApply extends AppCompatActivity {
 
     public void refreshView (View view)
     {
@@ -15,15 +13,9 @@ public class DetailedView extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goApply (View view)
-    {
-        Intent intent = new Intent(this, SuccessApply.class);
-        startActivity(intent);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed_view);
+        setContentView(R.layout.activity_success_apply);
     }
 }

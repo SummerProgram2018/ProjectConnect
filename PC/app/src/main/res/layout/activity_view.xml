@@ -1,4 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_alignParentTop="true"
+    tools:context=".ViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/viewprojects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/view_project"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="w,1:1"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <ListView
+            android:id="@+id/project_dynamic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#000"
+            android:dividerHeight="1dp"
+            android:listSelector="#0f9"
+            android:footerDividersEnabled="false">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/viewbutton"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:onClick="refreshView"
+        android:layout_height="50dp"
+        android:layout_width="205dp"
+        android:text="@string/view" />
+
+    <Button
+        android:id="@+id/makebutton"
+        android:layout_height="50dp"
+        android:layout_width="205dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="bottom"
+        android:text="@string/make" />
+
+</RelativeLayout>
+
+<!-- Obsolete Linear Layout code>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -28,36 +92,23 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
-            <LinearLayout
-                android:orientation="vertical"
+            <ListView
+                android:id="@+id/project_dynamic"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:divider="#f00"
+                android:dividerHeight="1dp"
+                android:listSelector="#0f9"
+                android:footerDividersEnabled="false">
 
-                <TextView
-                    android:id="@+id/Project1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="PROJECT 1\nSKILL :\nPEOPLE :"
-                    android:onClick="openProject"
-                    android:textSize="25sp" />
-
-
-                <TextView
-                    android:id="@+id/Project2"
-                    android:layout_below="@+id/Project1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="PROJECT 2\nSKILL :\nPEOPLE :"
-                    android:onClick="openProject"
-                    android:textSize="25sp" />
-
-            </LinearLayout>
+            </ListView>
         </ScrollView>
-
 
     </LinearLayout>
 
@@ -84,3 +135,4 @@
     </LinearLayout>
 
 </LinearLayout>
+<!-->

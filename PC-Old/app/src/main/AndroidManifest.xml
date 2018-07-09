@@ -17,8 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DetailedView" />
-        <activity android:name=".SuccessApply" />
-        <activity android:name=".ListView"></activity>
+        <activity android:name=".SuccessApply"></activity>
     </application>
 
 </manifest>
