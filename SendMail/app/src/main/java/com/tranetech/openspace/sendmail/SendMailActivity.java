@@ -1,5 +1,16 @@
 package com.tranetech.openspace.sendmail;
 
+/*
+Import guide :
+Step 1 : Download mail,activation,additionnal jar files and add in your project libs folder in android studio
+Files at https://code.google.com/archive/p/javamail-android/downloads
+Step 2 : Copy and paste all classes in java folder (mainly GMail and SendMailTask)
+Step 3 : Add this to the manifest :
+<uses-permission android:name="android.permission.INTERNET"/>
+Step 4 : Modify SendMailActivity as necessary, you might want to copy and paste between Start Paste and End Paste
+to the script this activity related with
+*/
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +29,7 @@ public class SendMailActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		final Button send = (Button) this.findViewById(R.id.button1);
 
+		//START PASTE
 		send.setOnClickListener(new View.OnClickListener() {
 
 			//The action to send
@@ -47,5 +59,6 @@ public class SendMailActivity extends Activity {
 						fromPassword, toEmailList, emailSubject, emailBody);
 			}
 		});
+        //END PASTE
 	}
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SendMail-master.iml" filepath="$PROJECT_DIR$/SendMail-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SendMail.iml" filepath="$PROJECT_DIR$/SendMail.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
