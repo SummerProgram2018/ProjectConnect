@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProjectManager"
+    android:orientation="horizontal">
+
+
+    <Button
+        android:id="@+id/buttonUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="42dp"
+        android:text="Update" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_page"
+        android:orientation="vertical"
+        android:layout_marginBottom="80sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:visibility="visible" />
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:gravity="center"
+            android:text="Hello World Project"
+            android:textSize="36sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity=""
+            android:textSize="25sp"
+            android:paddingStart="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:text="Pending Applicants"
+            android:visibility="visible" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity=""
+            android:textSize="25sp"
+            android:paddingStart="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:text="Update Project"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="8sp"
+            android:visibility="visible" />
+
+
+
+        <ScrollView
+            android:id="@+id/update_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60sp"
+                    android:id="@+id/typeLayout"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="@string/project_type"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/typeAnswer"
+                        android:text="Nice Type"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/typeLayout"
+                    android:id="@+id/number_positions">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="Number of \nPositions \nAvailable:"
+                        android:textSize="20sp"
+                        android:lines="3"/>
+
+                    <EditText
+
+                        android:id="@+id/positionsField"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|bottom"
+                        android:lines="1"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="5"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="140sp"
+                    android:layout_below="@+id/number_positions"
+                    android:id="@+id/keyskills_Field">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:layout_gravity="center"
+                        android:lines="2"
+                        android:text="3 Key \nSkills:"
+                        android:textSize="20sp"/>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:orientation="vertical"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <EditText
+                            android:id="@+id/firstSkill"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="IT skillz" />
+                        <EditText
+                            android:id="@+id/secondSkill"
+                            android:height="45sp"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="C boi" />
+                        <EditText
+                            android:id="@+id/thirdSkill"
+                            android:height="45sp"
+                            android:textSize="20sp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="JAVA" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_below="@+id/keyskills_Field"
+                    android:id="@+id/skills_Field">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="Skills \nNeeded:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/allSkillsField"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lines="5"
+                        android:text="IT skillz \n JAVA \n C boi\n mypy fam" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_below="@+id/skills_Field"
+                    android:id="@+id/description">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="Description:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:textSize="20sp"
+                        android:id="@+id/descField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lines="6"
+                        android:text="Its complicated \n BOII" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/description"
+                    android:id="@+id/length">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="100sp"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:lines="2"
+                        android:text="Length of \nProject:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:textSize="20sp"
+                        android:id="@+id/lengthField"
+                        android:layout_width="wrap_content"
+                         android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="4 weeks"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/length"
+                    android:id="@+id/brief_description">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:padding="@dimen/activity_vertical_margin"
+                        android:text="Brief \nDescription:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/shortDescField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="Feutured description" />
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Delete" />
+
+
+</RelativeLayout>
