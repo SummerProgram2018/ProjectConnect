@@ -32,14 +32,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Intent intent = new Intent(this,ViewProjects.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this,DisplayMessageActivity.class);
+        //startActivity(intent);
+
     }
 
 
     public void viewProjects(View view,Profile profile) {
         Intent intent = new Intent(this, ViewProjects.class);
-        //intent.putExtra("profile",profile);
+        intent.putExtra("profile",profile);
         startActivity(intent);
     }
 
@@ -98,4 +99,10 @@ public class MainActivity extends AppCompatActivity {
         warning.setVisibility(View.VISIBLE);
 
     }
+
+    @Override
+    public void onBackPressed(){
+        
+    }
+
 }

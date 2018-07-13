@@ -12,8 +12,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,6 +24,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.xml.validation.Validator;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -55,16 +60,35 @@ public class SignUpActivity extends AppCompatActivity {
         profileAdder(name, email, password);
     }
 
-    private void profileAdder(String name, String email, String password) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://projectconnect123-dbbc6.firebaseio.com/");
-        email = email.replaceAll("\\.","").replaceAll("@","");
-        DatabaseReference myRef = database.getReference("profiles/"+email);
+    private void profileAdder(final String name, final String email, final String password) {
+        final FirebaseDatabase database = FirebaseDatabase.getInstance("https://projectconnect123-dbbc6.firebaseio.com/");
+        String email2 = email.replaceAll("\\.","").replaceAll("@","");
+        final DatabaseReference myRef = database.getReference("profiles/"+email2);
 
-        myRef.setValue(new Profile(email,password,name));
 
-        /*myRef.child("username").setValue(name);
-        myRef.child("password").setValue(password);*/
-        viewProjects(name);
+        final DatabaseReference id = database.getReference("userNo");
+
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer integer = (Integer) dataSnapshot.getValue(Integer.class);
+                Profile newUser = new Profile(email,password,name,integer);
+                myRef.setValue(newUser);
+
+                id.setValue(integer + 1);
+
+                viewProjects(newUser);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        id.addListenerForSingleValueEvent(valueEventListener);
+
+
     }
 
 
@@ -83,9 +107,9 @@ public class SignUpActivity extends AppCompatActivity {
         generalErrFlag.setVisibility(View.VISIBLE);
     }
 
-    public void viewProjects(String name) {
+    public void viewProjects(Profile profile) {
         Intent intent = new Intent(this, ViewProjects.class);
-//Add profile
+        intent.putExtra("profile",profile);
         startActivity(intent);
     }
 }

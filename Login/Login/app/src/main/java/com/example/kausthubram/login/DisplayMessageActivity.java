@@ -1,9 +1,7 @@
 package com.example.kausthubram.login;
 
 import android.content.Intent;
-import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,8 +9,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class DisplayMessageActivity extends AppCompatActivity {
 
@@ -54,21 +55,50 @@ public class DisplayMessageActivity extends AppCompatActivity {
     }
 
     public void createProject(View view){
-        String descField = ((EditText) findViewById(R.id.descField)).getText().toString();
-        String nameField = ((EditText) findViewById(R.id.nameField)).getText().toString();
-        String shortDescField = ((EditText) findViewById(R.id.shortDescField)).getText().toString();
-        String typeField = ((EditText) findViewById(R.id.typeField)).getText().toString();
-        String skillsField = ((EditText) findViewById(R.id.skillsField)).getText().toString();
-        String positionField = ((EditText) findViewById(R.id.positionsField)).getText().toString();
-        String allSkillsField = ((EditText) findViewById(R.id.allSkillsField)).getText().toString();
+        final String descField = ((EditText) findViewById(R.id.descField)).getText().toString();
+        final String nameField = ((EditText) findViewById(R.id.nameField)).getText().toString();
+        final String shortDescField = ((EditText) findViewById(R.id.shortDescField)).getText().toString();
+        final String typeField = ((EditText) findViewById(R.id.typeLayout)).getText().toString();
+        final String skillsField = ((EditText) findViewById(R.id.skillsField)).getText().toString();
+        final String positionField = ((EditText) findViewById(R.id.positionsField)).getText().toString();
+        final String allSkillsField = ((EditText) findViewById(R.id.allSkillsField)).getText().toString();
+        final String lengthField = ((EditText) findViewById(R.id.lengthField)).getText().toString();
 
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance("https://projectconnect123-dbbc6.firebaseio.com/");
+        final String userEmail = user.getEmail().replaceAll("\\.","").replaceAll("@","");
 
-        DatabaseReference myRef = database.getReference("projects/" + nameField);
+        final FirebaseDatabase database = FirebaseDatabase.getInstance("https://projectconnect123-dbbc6.firebaseio.com/");
 
-        Project project = new Project(nameField,typeField,Integer.valueOf(positionField),skillsField,allSkillsField,shortDescField,descField,0,user.getEmail(),"1 week",0);
-        myRef.setValue(project);
+        final DatabaseReference getID = database.getReference("projectNo");
+
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Integer integer = (Integer) dataSnapshot.getValue(Integer.class);
+                //Log.d("ID",String.valueOf(integer));
+
+
+                DatabaseReference myRef = database.getReference("projects/" +String.valueOf(integer));
+                Project project = new Project(nameField,typeField,Integer.valueOf(positionField),skillsField,allSkillsField,shortDescField,descField,integer,user.getEmail(),lengthField,0);
+
+
+                DatabaseReference addToUser = database.getReference("profiles/"+userEmail+"/projects/"+String.valueOf(integer));
+
+                addToUser.setValue(project);
+                myRef.setValue(project);
+                getID.setValue((integer + 1));
+
+
+                goToView();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+
+        getID.addListenerForSingleValueEvent(valueEventListener);
 
     }
 
@@ -83,6 +113,15 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
     public void goToMake(){}
 
-    public void goToProfile(){}
+    public void goToProfile(){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra("profile",user);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 
 }

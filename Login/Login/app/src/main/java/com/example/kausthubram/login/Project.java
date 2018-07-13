@@ -3,6 +3,8 @@ package com.example.kausthubram.login;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.Map;
+
 public class Project implements Parcelable {
 
 
@@ -18,6 +20,11 @@ public class Project implements Parcelable {
     private String length;
 
     private String author;
+
+    private Map<Integer,String> applicants;
+    private Map<Integer,String> accepted;
+
+
     public Project() {}
 
     public Project(String name, String type, int positions, String keySkills,
@@ -31,9 +38,12 @@ public class Project implements Parcelable {
         this.allSkills = allSkills;
         this.briefDescription = briefDescription;
         this.wholeDescription = wholeDescription;
+        this.id = id;
         this.author = author;
         this.length = length;
         this.currentPeople = currentPeople;
+        this.applicants = applicants;
+        this.accepted = accepted;
     }
 
     public String getName() {
@@ -68,7 +78,7 @@ public class Project implements Parcelable {
     public String getAuthor(){
         return author;
     }
-    public int getid(){return id;}
+    public int  getid(){return id;}
 
     public String getLength(){
         return length;
@@ -90,6 +100,8 @@ public class Project implements Parcelable {
         author = in.readString();
         length = in.readString();
         currentPeople = in.readInt();
+        applicants = in.readHashMap(String.class.getClassLoader());
+        accepted = in.readHashMap(String.class.getClassLoader());
     }
 
     @Override

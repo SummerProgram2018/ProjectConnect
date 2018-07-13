@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="202dp"
         android:layout_gravity="top"
         android:layout_weight="8"
         android:orientation="vertical">
@@ -22,13 +22,15 @@
             android:gravity="center"
             android:textSize="12sp"
             android:visibility="visible" />
+
         <TextView
-            android:id="@id/text"
+            android:id="@+id/titleDetailed"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:gravity="center"
-            android:text="Hello World Project"
+            android:textColor="@android:color/black"
             android:textSize="36sp"
+            android:textStyle="bold"
             android:visibility="visible" />
 
         <ScrollView
@@ -41,44 +43,44 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50sp"
                     android:id="@+id/typeLayout"
-                    >
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:lines="2"
                         android:gravity="center"
+                        android:lines="2"
                         android:text="@string/project_type"
-                        android:textSize="20sp"/>
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:id="@+id/typeAnswer"
-                        android:text="Nice Type"
-                        android:textSize="20sp"
+                        android:id="@+id/typeDetailed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:text="Nice Type"
+                        android:textSize="20sp" />
 
 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/number_positions"
                     android:layout_width="match_parent"
                     android:layout_height="80sp"
-                    android:layout_below="@+id/typeLayout"
-                    android:id="@+id/number_positions">
+                    android:layout_below="@+id/typeLayout">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         android:text="      "
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
 
                     <TextView
@@ -86,118 +88,117 @@
                         android:layout_height="wrap_content"
 
                         android:text="Number of \n Positions \n Available:"
-                        android:textSize="20sp"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="                            "
                         android:gravity="center"
-                        android:textSize="20sp"
-                        />
+                        android:text="                            "
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:id="@+id/positionsField"
+                        android:id="@+id/peopleDetailed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5"
                         android:layout_gravity="center"
-                        android:textSize="20sp"
-                        />
+                        android:text="5"
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/skills_Field"
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
-                    android:layout_below="@+id/number_positions"
-                    android:id="@+id/skills_Field">
+                    android:layout_below="@+id/number_positions">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:lines="2"
                         android:gravity="center"
+                        android:lines="2"
                         android:text="Skills \n Needed:"
-                        android:textSize="20sp"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:id="@+id/allSkillsField"
-                        android:textSize="20sp"
+                        android:id="@+id/skillsDetailed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:lines="5"
-                        android:text="IT skillz \n JAVA \n C boi\n mypy fam" />
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
-                    android:layout_below="@+id/skills_Field"
-                    android:id="@+id/description">
+                    android:layout_below="@+id/skills_Field">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:lines="2"
                         android:gravity="center"
+                        android:lines="2"
                         android:text="Description:"
-                        android:textSize="20sp"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:textSize="20sp"
-                        android:id="@+id/descField"
+                        android:id="@+id/descriptionDetailed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:lines="6"
-                        android:text="Its complicated \n BOII" />
+                        android:text="Its complicated \n BOII"
+                        android:textSize="20sp" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/length"
                     android:layout_width="match_parent"
                     android:layout_height="100sp"
-                    android:layout_below="@+id/description"
-                    android:id="@+id/length">
+                    android:layout_below="@+id/description">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:lines="2"
                         android:gravity="center"
+                        android:lines="2"
                         android:text="Length of \n Project:"
-                        android:textSize="20sp"/>
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:textSize="20sp"
                         android:id="@+id/lengthField"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="right"
                         android:lines="1"
-                        android:text="4"/>
+                        android:text="4"
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:lines="1"
-                        android:text=" weeks"/>
+                        android:text=" weeks"
+                        android:textSize="20sp" />
                 </LinearLayout>
-
 
 
             </RelativeLayout>
 
         </ScrollView>
-
 
 
     </LinearLayout>
@@ -210,12 +211,11 @@
 
         <Button
             android:id="@+id/applybutton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/apply"
-            android:onClick="goApply"
-            />
+            android:onClick="application"
+            android:text="@string/apply" />
     </LinearLayout>
 
 

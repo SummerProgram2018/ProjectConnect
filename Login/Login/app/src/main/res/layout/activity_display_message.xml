@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:id="@+id/textView3"
@@ -21,12 +20,14 @@
             android:gravity="center"
             android:textSize="12sp"
             android:visibility="visible" />
+
         <TextView
             android:id="@id/text"
             android:layout_width="match_parent"
             android:layout_height="50sp"
             android:gravity="center"
             android:text="Make Project"
+            android:textColor="@color/BLACK"
             android:textSize="36sp"
             android:visibility="visible" />
 
@@ -55,10 +56,11 @@
 
                     <EditText
                         android:id="@+id/nameField"
-                        android:layout_weight="2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center"/>
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="Project Test" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -78,11 +80,12 @@
                         android:textSize="20sp"/>
 
                     <EditText
-                        android:id="@+id/typeField"
+                        android:id="@+id/typeLayout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="2"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:text="IT" />
 
 
                 </LinearLayout>
@@ -108,7 +111,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:hint="Number of Positions" />
+                        android:hint="Number of Positions"
+                        android:text="3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -132,7 +136,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:hint="@string/requires_field" />
+                        android:hint="@string/requires_field"
+                        android:text="IT,SOFTWARE" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -156,7 +161,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:hint="List all skills required" />
+                        android:hint="List all skills required"
+                        android:text="None" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -180,23 +186,24 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="4"
                         android:gravity="center"
-                        android:hint="Feutured description" />
+                        android:hint="Featured Description"
+                        android:text="Test Project" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/description"
                     android:layout_width="match_parent"
-                    android:layout_height="100sp"
-                    android:layout_below="@+id/brief_description"
-                    android:id="@+id/description">
+                    android:layout_height="69dp"
+                    android:layout_below="@+id/brief_description">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:lines="2"
                         android:gravity="center"
+                        android:lines="2"
                         android:text="Description:"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                     <EditText
                         android:id="@+id/descField"
@@ -204,11 +211,33 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:hint="Full description of project" />
+                        android:hint="Full description of project"
+                        android:text="Test Test Project" />
                 </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/length"
+                    android:layout_width="match_parent"
+                    android:layout_height="69dp"
+                    android:layout_below="@+id/description">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:text="Length:"
+                        android:textSize="20sp" />
 
-
+                    <EditText
+                        android:id="@+id/lengthField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="Length of Project"
+                        android:text="1 week" />
+                </LinearLayout>
             </RelativeLayout>
 
         </ScrollView>
@@ -216,6 +245,15 @@
 
     </LinearLayout>
 
+
+    <Button
+        android:id="@+id/makeProject"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_weight="2"
+        android:onClick="createProject"
+        android:text="Make Project"
+        android:textAllCaps="false" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation_menu_make"
@@ -227,7 +265,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation">
+
+    </android.support.design.widget.BottomNavigationView>
 
 </LinearLayout>
 

@@ -40,8 +40,9 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
     @Override
     public void onBindViewHolder(ProjectViewHolder holder, int position) {
         holder.title.setText(projectList.get(position).getName());
-        holder.skills.setText(projectList.get(position).getType());
-        holder.short_desc.setText(projectList.get(position).getType());
+        holder.type.setText(projectList.get(position).getType() );
+        holder.skills.setText(projectList.get(position).getKeySkills());
+        holder.short_desc.setText(projectList.get(position).getBriefDescription());
 
         holder.title.setOnClickListener(clickListener);
     }
@@ -53,12 +54,14 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ProjectV
 
     public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView title;
+        public TextView type;
         public TextView skills;
         public TextView short_desc;
 
         public ProjectViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.titleView);
+            type = (TextView) view.findViewById(R.id.typeView);
             skills = (TextView) view.findViewById(R.id.skillsView);
             short_desc = (TextView) view.findViewById(R.id.short_desc_view);
             view.setOnClickListener(this);

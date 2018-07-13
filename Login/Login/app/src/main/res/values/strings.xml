@@ -34,5 +34,6 @@
     <string name="title_view">View</string>
     <string name="title_make">Make</string>
     <string name="title_profile">Profile</string>
+    <string name="log_out">Log Out</string>
 
 </resources>

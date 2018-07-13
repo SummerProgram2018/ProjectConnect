@@ -22,9 +22,9 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ViewProjects" />
         <activity android:name=".DetailedProject" />
-        <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ManageProjectActivity" />
+        <activity android:name=".AuthoredProjectManger" android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>

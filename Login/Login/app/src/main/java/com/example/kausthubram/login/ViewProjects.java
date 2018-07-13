@@ -31,6 +31,8 @@ public class ViewProjects extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ProjectAdapter mAdapter;
 
+    private Profile user;
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -54,6 +56,9 @@ public class ViewProjects extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_projects);
+
+        Intent i = getIntent();
+        user = (Profile)i.getSerializableExtra("profile");
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
@@ -115,14 +120,25 @@ public class ViewProjects extends AppCompatActivity {
     public void changePage(Project project){
         Intent intent = new Intent(this,DetailedProject.class);
         intent.putExtra("project",project);
+        intent.putExtra("profile",user);
         startActivity(intent);
     }
 
     public void goToView(){}
     public void goToMake(){
         Intent intent = new Intent(this, DisplayMessageActivity.class);
+        intent.putExtra("profile",user);
         startActivity(intent);
     }
-    public void goToProfile(){}
+    public void goToProfile(){
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra("profile",user);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 
 }
