@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kausthubram.login">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:title="Project Connect"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DisplayMessageActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".ViewProjects" />
+        <activity android:name=".DetailedProject" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ManageProjectActivity" android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".AuthoredProjectManger" android:windowSoftInputMode="adjustPan"></activity>
+    </application>
+
+</manifest>

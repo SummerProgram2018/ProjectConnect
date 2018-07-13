@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "120711885760",
+    "firebase_url": "https://projectconnect123-dbbc6.firebaseio.com",
+    "project_id": "projectconnect123-dbbc6",
+    "storage_bucket": "projectconnect123-dbbc6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120711885760:android:9301d05dd8b3df7c",
+        "android_client_info": {
+          "package_name": "com.example.kausthubram.login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120711885760-bbsbnt48fiaunlems7qaim0dcr7hc3u6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kausthubram.login",
+            "certificate_hash": "f34b27391b36153b74fc3c189c3d5e2421c5b687"
+          }
+        },
+        {
+          "client_id": "120711885760-ofut986767jvdalv5mlg6vjnihr6cohv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsunQJ9-WbKrqPn8kNeVsrR7HHCe0huoA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120711885760-ofut986767jvdalv5mlg6vjnihr6cohv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

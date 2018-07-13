@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:orientation="vertical"
+    tools:context=".DetailedProject">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:layout_gravity="top"
+        android:layout_weight="8"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/titleDetailed"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:gravity="center"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/typeField"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:text="@string/project_type"
+                        android:textColor="@android:color/background_dark"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/typeDetailed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="Nice Type"
+                        android:textSize="20sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/number_positions"
+                    android:layout_width="match_parent"
+                    android:layout_height="80sp"
+                    android:layout_below="@+id/typeField">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:text="Number of \n Positions \n Available:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/peopleDetailed"
+                        android:layout_width="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:text="5"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/skills_Field"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/number_positions">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:lines="2"
+                        android:text="Skills \nNeeded:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/skillsDetailed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:lines="5"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/skills_Field">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:text="Description:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/descriptionDetailed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:lines="6"
+                        android:text="Its complicated \n BOII"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/length"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/description">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/activity_vertical_margin"
+                        android:lines="2"
+                        android:text="Length of \nProject:"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/lengthDetailed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:lines="1"
+                        android:text="4"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|center">
+
+        <Button
+            android:id="@+id/applybutton"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:onClick="application"
+            android:text="@string/apply" />
+    </LinearLayout>
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_menu_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+</LinearLayout>

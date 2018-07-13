@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/textView3"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/LinearLayout02"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_gravity="top"
+        android:layout_weight="8">
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:gravity="center"
+            android:text="Make Project"
+            android:textColor="@color/BLACK"
+            android:textSize="36sp"
+            android:visibility="visible" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:id="@+id/nameLayout"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/proj_name"
+                        android:gravity="center"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/nameField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/type"
+                    android:layout_width="match_parent"
+                    android:layout_height="70sp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/nameLayout">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:text="@string/project_type"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/typeField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/type"
+                    android:id="@+id/number_positions">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="2"
+                        android:gravity="center"
+                        android:text="@string/no_positions"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/positionsField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="Number of Positions" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/number_positions"
+                    android:id="@+id/required_skills">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="2"
+                        android:gravity="center"
+                        android:text="Key Skills:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/skillsField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="@string/requires_field" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/required_skills"
+                    android:id="@+id/skills_Field">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="2"
+                        android:gravity="center"
+                        android:text="Skills:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/allSkillsField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="List all skills required" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100sp"
+                    android:layout_below="@+id/skills_Field"
+                    android:id="@+id/brief_description">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="2"
+                        android:gravity="center"
+                        android:text="Brief \n Description:"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:id="@+id/shortDescField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:gravity="center"
+                        android:hint="Featured Description" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="69dp"
+                    android:layout_below="@+id/brief_description">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:layout_height="wrap_content"
+                        android:text="Description:"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/descField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="Full description of project" />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/length"
+                    android:layout_width="match_parent"
+                    android:layout_height="69dp"
+                    android:layout_below="@+id/description">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:text="Length:"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/lengthField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="Length of Project" />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/makeProject"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_weight="2"
+        android:onClick="createProject"
+        android:text="Make Project"
+        android:textAllCaps="false" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_menu_make"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation">
+
+    </android.support.design.widget.BottomNavigationView>
+
+</LinearLayout>
+
+
+
